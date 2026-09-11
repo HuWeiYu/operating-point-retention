@@ -1,0 +1,34 @@
+{
+  "$schema": "cohort-description",
+  "name": "env-B replay cohort (formal Fig.3)",
+  "description": "The 12 shared-FT replay runs backing Fig.3 and Finding 3. Run names are relative to the run-tree root supplied by --root (the real names live under experiments/runs in the private repo and are masked in this release).",
+  "method": "shared_ft",
+  "stream": "mvtec_order_0",
+  "encoder": "dinov2reg_vit_base_14",
+  "env": {"tag": "B", "gpu": "RTX 5090", "torch": "2.8.0+cu128"},
+  "hyperparams": {
+    "inp_num": 6, "epochs": 50, "input_size": 448, "crop_size": 392,
+    "batch_size": 8, "lr": 1e-3, "final_lr": 1e-4, "weight_decay": 1e-4,
+    "validation_fraction": 0.1, "threshold_quantile": 0.99, "resize_mask": 256
+  },
+  "seeds": [1, 2, 3],
+  "buffers": [0, 10, 30, 100],
+  "endpoint_stage": 5,
+  "old_tasks": [1, 2, 3, 4],
+  "current_task": 5,
+  "run_names": [
+    "2026-08-28_s8_mvtec_order0_seed1_sharedft_replay0",
+    "2026-08-28_s8_mvtec_order0_seed1_sharedft_replay10",
+    "2026-08-28_s8_mvtec_order0_seed1_sharedft_replay30",
+    "2026-08-28_s8_mvtec_order0_seed1_sharedft_replay100",
+    "2026-08-27_s8_mvtec_order0_seed2_sharedft_replay0",
+    "2026-08-27_s8_mvtec_order0_seed2_sharedft_replay10",
+    "2026-08-27_s8_mvtec_order0_seed2_sharedft_replay30",
+    "2026-08-27_s8_mvtec_order0_seed2_sharedft_replay100",
+    "2026-08-27_s8_mvtec_order0_seed3_sharedft_replay0",
+    "2026-08-27_s8_mvtec_order0_seed3_sharedft_replay10",
+    "2026-08-27_s8_mvtec_order0_seed3_sharedft_replay30",
+    "2026-08-27_s8_mvtec_order0_seed3_sharedft_replay100"
+  ],
+  "note": "Buffer 0 is replay-free. The seed-1 buffer-0 run predates this cohort and lacks a replay_buffer_size key; the aggregator treats a missing key as 0."
+}

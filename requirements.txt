@@ -1,0 +1,38 @@
+# Public dependency list for the audited INP-Former operating-point-retention release.
+#
+# Two tiers share one environment:
+#   - Training  (src/continual, src/models, src/data, src/utils) needs a CUDA GPU.
+#   - Offline analysis + plotting (src/metrics, src/analysis, src/plotting) is pure NumPy/pandas.
+#
+# The exact versions below reflect the environments the paper runs were produced with
+# (env-A: torch 2.5.1+cu124; env-B: torch 2.8.0+cu128). Anything newer that keeps the
+# same public API is expected to work; the pinned set is the tested one.
+
+# --- deep learning / GPU ---
+torch==2.5.1
+torchvision==0.20.1
+
+# --- numeric / imaging ---
+numpy==2.4.6
+scipy==1.17.1
+pandas==3.0.5
+scikit-learn==1.9.0
+scikit-image==0.26.0
+opencv-python-headless==5.0.0.93
+Pillow>=9.0
+
+# --- transformers / augmentation ---
+timm==1.0.28
+kornia==0.8.3
+matplotlib==3.11.1
+
+# --- misc: IO, logging, CLI/config parsing ---
+tqdm>=4.60
+PyYAML>=6.0
+
+# --- third-party evaluation (imported by src/utils.py) ---
+# A separate, non-PyPI-authored package: https://github.com/winggan/adeval
+ADEval==1.1.0
+
+# --- tests ---
+pytest>=7.0

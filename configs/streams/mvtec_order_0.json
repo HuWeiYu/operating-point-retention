@@ -1,0 +1,13 @@
+{
+  "name": "mvtec_mccl_order_0",
+  "dataset": "MVTec-AD",
+  "task_granularity": "task",
+  "tasks": [
+    ["bottle", "cable", "carpet"],
+    ["capsule", "hazelnut", "grid"],
+    ["metal_nut", "pill", "leather"],
+    ["screw", "toothbrush", "tile"],
+    ["transistor", "zipper", "wood"]
+  ],
+  "notes": "Each task contains two object categories and one texture category. This is the 5-stage order-0 stream used for Table I and Fig.3."
+}

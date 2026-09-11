@@ -1,0 +1,10 @@
+{
+  "$schema": "delta-sweep-grid",
+  "description": "Post-hoc threshold sweep in standardized units. Each task's threshold is moved to tau_t + delta*sigma_t; in standardized score z=(score-tau_t)/sigma_t the alarm rule becomes z > delta. A common delta is NOT a common absolute shift (each task has its own sigma_t).",
+  "grid": {"min": -4.0, "max": 8.0, "step": 0.25},
+  "display_window": {"min": -2.0, "max": 4.0},
+  "delta_zero_marker": 0.0,
+  "example_tolerance": {"fpr": 0.05, "fnr": 0.10},
+  "note_0": "delta=0 is the stored operating point and must reproduce the formal FPR@fixed / FNR@fixed (the audit verifies this to ~8e-17).",
+  "note_1": "example_tolerance is an EXAMPLE (FPR<=5% AND FNR<=10%), not an industrial standard."
+}

@@ -1,0 +1,22 @@
+# Shared baseline hyperparameters for the audited stream (paper runs, env-B).
+# Keys use the underscore dest-names understood by src/continual/continual_grouped.
+# Precedence when using --config: CLI flags > this YAML > built-in defaults.
+encoder: dinov2reg_vit_base_14
+stream: configs/streams/mvtec_order_0.json
+seed: 1
+input_size: 448
+crop_size: 392
+inp_num: 6
+epochs: 50
+batch_size: 8
+num_workers: 4
+learning_rate: 0.001
+final_learning_rate: 0.0001
+weight_decay: 0.0001
+validation_fraction: 0.1
+threshold_quantile: 0.99
+resize_mask: 256
+replay_selector: random
+
+method: shared_ft
+replay_buffer_size: 0
